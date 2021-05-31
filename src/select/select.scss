@@ -1,0 +1,21 @@
+@import "../variables";
+
+.currency-select {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        font-size: 14px;
+        color: $gray;
+    }
+
+    select {
+        border: none;
+        border-bottom: 1px solid $light-gray;
+        padding: 0.5rem 0 0.75rem 0;
+        font-size: 18px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

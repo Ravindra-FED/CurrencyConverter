@@ -1,0 +1,39 @@
+@import "./variables";
+
+.App {
+  width: 90%;
+  margin: 0 auto;
+}
+
+nav {
+  text-align: center;
+  margin: 2rem 0;
+  a {
+    font-size: 36px;
+    color: $adyen-light-green;
+    text-decoration: none;
+    &:hover {
+      color: $adyen-dark-green;
+    }
+  }
+}
+
+.intro-text {
+  h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+  p {
+    font-size: 1.25rem;
+    margin: 0;
+    margin-top: 0.75rem;
+  }
+}
+
+.converter-section {
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+

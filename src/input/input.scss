@@ -1,0 +1,14 @@
+@import "../variables";
+
+.currency-input {
+  margin-top: 1rem;
+  input {
+    border: none;
+    border-bottom: 1px solid $light-gray;
+    font-size: 3.5rem;
+    &:active,
+    &:focus {
+      outline: none;
+    }
+  }
+}
