@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { API_ACCESS_KEY, BASE_URL } from "../apiData";
+import { BASE_URL } from "../apiData";
 import { CURRENCY_FROM_ID, CURRENCY_TO_ID } from "../constants";
 import "./CurrencyConverter.scss";
 import { CurrencySelectAndInput } from "../CurrencySelectAndInput/currencySelectAndInputFields";
@@ -58,8 +58,8 @@ export const CurrencyConverter = () => {
   useEffect(() => {
     setLoader(true);
     const countriesApis = [
-      fetch(`${BASE_URL}/symbols?access_key=${API_ACCESS_KEY}`),
-      fetch(`${BASE_URL}/latest?access_key=${API_ACCESS_KEY}`),
+      fetch(`${BASE_URL}/symbols`),
+      fetch(`${BASE_URL}/latest`),
     ];
 
     Promise.all(countriesApis)
@@ -77,9 +77,9 @@ export const CurrencyConverter = () => {
 
         const symbolsData = countriesAndSymbols.symbols;
         const countryAbbr = Object.keys(symbolsData);
-        const formattedData = countryAbbr.map((abbr) => ({
-          country: symbolsData[abbr],
-          abbr,
+        const formattedData = countryAbbr.map((item) => ({
+          country: symbolsData[item].description,
+          abbr:symbolsData[item].code,
         }));
         setCountriesAndSymbols(formattedData);
         setFromCountry(formattedData[0].abbr);
